@@ -3,34 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	for i := 0; i <= 10; i++ {
-		fmt.Printf(" %d", i)
+	modulo := 2 % 2
+
+	switch modulo {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
 	}
 
-	fmt.Printf("\n")
-	//for While
-	counter := 1
+	value := 200
 
-	for counter <= 15 {
-		fmt.Printf(" %d", counter)
-		counter++
-	}
-
-	fmt.Printf("\n")
-	//For forever
-	counterForever := 0
-	for {
-		fmt.Printf(" %d", counterForever)
-		counterForever++
-		if counterForever > 20 {
-			break
-		}
-	}
-	fmt.Printf("\n For Decremental \n")
-
-	// for decremental
-	for i := 30; i > 0; i-- {
-		fmt.Printf(" %d", i)
-
+	switch {
+	case value > 100:
+		fmt.Println("Es mayor a 100")
+	case value < 0:
+		fmt.Println("Es menor que 0")
+	default:
+		fmt.Println("No condition")
 	}
 }

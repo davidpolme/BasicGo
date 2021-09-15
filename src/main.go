@@ -1,32 +1,36 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 func main() {
-	normalFunction("Hola Mundo")
-	tripleArgs("Los numeros son: ", 2, 343)
-	normalFunction(strconv.Itoa(returnValue(2)))
+	for i := 0; i <= 10; i++ {
+		fmt.Printf(" %d", i)
+	}
 
-	value1, value2 := doubleReturn(10)
-	_, value3 := doubleReturn(10)
-	println(value1, value2, value3)
-}
+	fmt.Printf("\n")
+	//for While
+	counter := 1
 
-func normalFunction(message string) {
-	fmt.Println(message)
-}
+	for counter <= 15 {
+		fmt.Printf(" %d", counter)
+		counter++
+	}
 
-func tripleArgs(a string, b int, c int) {
-	fmt.Println(a, b, " y ", c)
-}
+	fmt.Printf("\n")
+	//For forever
+	counterForever := 0
+	for {
+		fmt.Printf(" %d", counterForever)
+		counterForever++
+		if counterForever > 20 {
+			break
+		}
+	}
+	fmt.Printf("\n For Decremental \n")
 
-func returnValue(a int) int {
-	return a * 2
-}
+	// for decremental
+	for i := 30; i > 0; i-- {
+		fmt.Printf(" %d", i)
 
-func doubleReturn(a int) (c, d int) {
-	return a, a * 2
+	}
 }

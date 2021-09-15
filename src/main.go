@@ -1,23 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
-	hellomsg := "hello"
-	worldmsg := "hello"
+	normalFunction("Hola Mundo")
+	tripleArgs("Los numeros son: ", 2, 343)
+	normalFunction(strconv.Itoa(returnValue(2)))
 
-	fmt.Println(hellomsg, worldmsg)
-	fmt.Println(hellomsg, worldmsg)
+	value1, value2 := doubleReturn(10)
+	_, value3 := doubleReturn(10)
+	println(value1, value2, value3)
+}
 
-	nombre := "Platzi"
-	cursos := 500
-	fmt.Printf("%s tiene más de %d cursos \n", nombre, cursos)
-
-	message := fmt.Sprintf("%s tiene más de %d cursos", nombre, cursos)
+func normalFunction(message string) {
 	fmt.Println(message)
+}
 
-	//Tipo de datos
-	fmt.Printf("Hellomsg %T\n", hellomsg)
-	fmt.Printf("Cursos %T\n", cursos)
+func tripleArgs(a string, b int, c int) {
+	fmt.Println(a, b, " y ", c)
+}
 
+func returnValue(a int) int {
+	return a * 2
+}
+
+func doubleReturn(a int) (c, d int) {
+	return a, a * 2
 }

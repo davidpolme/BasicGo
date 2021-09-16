@@ -8,10 +8,11 @@ type Pc struct {
 	Brand string
 }
 
-func (myPC Pc) Ping() {
-	fmt.Println(myPC.Brand, "PONG!")
-}
-
-func (myPC *Pc) DuplicateRAM() {
-	myPC.Ram *= 2
+// Stringer
+func (myPC Pc) String() string {
+	return fmt.Sprintf(`Descripción PC:
+- RAM: %d GB, 
+- Disco: %d GB,
+- Marca: %s
+`, myPC.Ram, myPC.Disk, myPC.Brand)
 }

@@ -1,20 +1,19 @@
 package main
 
-import (
-	"fmt"
-
-	mpkg "github.com/davidpolme/BasicGo/src/mypackage"
-)
+import "fmt"
 
 func main() {
-	var myCar mpkg.CarPublic
-	myCar.Brand = "Tesla"
-	myCar.Year = 2021
-	fmt.Println(myCar)
 
-	// // carPrivate es privado y no se puede acceder
-	// var myOtherCar mpkg.carPrivate
-	// fmt.Println(myOtherCar)
+	/*
+		& Sirve para acceder a la direccion de memoria
+		* Sirve para acceder al valor de memoria
+	*/
+	a := 50
+	b := &a
 
-	mpkg.PrintMessage("Holaaa")
+	fmt.Println("a : ", a, "\nb : ", b, "\nb*: ", *b)
+
+	//a y *b apuntan a la misma direccion de memoria
+	*b = 100
+	fmt.Println("\na : ", a, "\nb : ", b, "\nb*: ", *b)
 }

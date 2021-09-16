@@ -1,31 +1,20 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	slice := []string{"hola", "que", "hace"}
+	m := make(map[string]int)
 
-	for i := range slice {
-		fmt.Println(i)
+	m["Jose"] = 14
+	m["Pepito"] = 20
+
+	fmt.Println("1. ", m)
+
+	for i, v := range m {
+		fmt.Println("2. ", i, v)
 	}
 
-	isPalindromo("AnitaLavaLaTina")
-}
-
-func isPalindromo(text string) {
-	text = strings.ToUpper(text)
-	var textReverse string
-
-	for i := len(text) - 1; i >= 0; i-- {
-		textReverse += string(text[i])
-	}
-
-	if text == textReverse {
-		fmt.Println("Es Palindromo")
-	} else {
-		fmt.Println("no es Palindromo")
-	}
+	//Encontrar Valor
+	value, encontrado := m["Jose"]
+	fmt.Println("3. ", value, encontrado)
 }

@@ -1,18 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-type car struct {
-	brand string
-	year  int
-}
+	mpkg "github.com/davidpolme/BasicGo/src/mypackage"
+)
 
 func main() {
-	myCar := car{brand: "Ford", year: 2020}
+	var myCar mpkg.CarPublic
+	myCar.Brand = "Tesla"
+	myCar.Year = 2021
 	fmt.Println(myCar)
 
-	//Otra manera
-	var otherCar car
-	otherCar.brand = "Ferrari"
-	fmt.Println(otherCar)
+	// // carPrivate es privado y no se puede acceder
+	// var myOtherCar mpkg.carPrivate
+	// fmt.Println(myOtherCar)
+
+	mpkg.PrintMessage("Holaaa")
 }

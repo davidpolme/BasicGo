@@ -2,19 +2,17 @@ package main
 
 import "fmt"
 
+type car struct {
+	brand string
+	year  int
+}
+
 func main() {
-	m := make(map[string]int)
+	myCar := car{brand: "Ford", year: 2020}
+	fmt.Println(myCar)
 
-	m["Jose"] = 14
-	m["Pepito"] = 20
-
-	fmt.Println("1. ", m)
-
-	for i, v := range m {
-		fmt.Println("2. ", i, v)
-	}
-
-	//Encontrar Valor
-	value, encontrado := m["Jose"]
-	fmt.Println("3. ", value, encontrado)
+	//Otra manera
+	var otherCar car
+	otherCar.brand = "Ferrari"
+	fmt.Println(otherCar)
 }

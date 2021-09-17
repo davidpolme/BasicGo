@@ -2,18 +2,27 @@ package main
 
 import (
 	"fmt"
-
-	fn "github.com/davidpolme/BasicGo/src/functions"
+	"sync"
+	"time"
 )
 
 func main() {
-	mySquare := fn.Square{Base: 2}
-	myRectangle := fn.Rectangle{Base: 2, Height: 4}
+	var wg sync.WaitGroup
 
-	fn.CalcularArea(myRectangle)
-	fn.CalcularArea(mySquare)
+	fmt.Println("hello")
+	wg.Add(1)
+	go say("World", &wg)
 
-	//Lista de interfaces
-	myInterface := []interface{}{"Hola", 12, 4.90}
-	fmt.Println(myInterface...)
+	wg.Wait()
+
+	go func(text string) {
+		fmt.Println(text)
+	}("Adios")
+	time.Sleep(time.Second * 1)
+}
+
+func say(text string, wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	fmt.Println(text)
 }
